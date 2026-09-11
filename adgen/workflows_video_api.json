@@ -1,0 +1,294 @@
+{
+  "194": {
+    "inputs": {
+      "unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Load Diffusion Model"
+    }
+  },
+  "195": {
+    "inputs": {
+      "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "type": "minimax",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "Load CLIP"
+    }
+  },
+  "196": {
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "198": {
+    "inputs": {
+      "label_json": "{\"text\":\"Minimax H3 - Reference Three Images\",\"fontSize\":31,\"fontFamily\":\"Arial\",\"fontColor\":\"#ffffff\",\"textAlign\":\"left\",\"backgroundColor\":\"#f66744\",\"padding\":10,\"borderRadius\":0,\"opacity\":1,\"fontWeight\":\"normal\",\"lineHeight\":1}"
+    },
+    "class_type": "PixaromaLabel",
+    "_meta": {
+      "title": "Label Pixaroma"
+    }
+  },
+  "212": {
+    "inputs": {
+      "note_json": "{\"version\":1,\"content\":\"<h1>MODELS AND NODES USED IN THIS WORKFLOW</h1><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><h2><span data-ic=\\\"model-v1\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Load Diffusion Model</h2><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n<span class=\\\"pix-note-btnblock\\\"><a class=\\\"pix-note-dl\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/diffusion_models/minimax_h3_ref2va_pruned_int8_convrot.safetensors\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Download minimax_h3_ref2va_pruned_int8_convrot.safetensors<span class=\\\"pix-note-btnsize\\\">19.5 GB</span></a></span>&nbsp;\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><div class=\\\"pix-note-folderhint\\\" style=\\\"color: #f66744\\\">Place in: ComfyUI/models/diffusion_models/h3</div><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>Create the <code>h3</code> folder if it does not exist.</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n<span class=\\\"pix-note-btnblock\\\">\\n  <a class=\\\"pix-note-rm\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://huggingface.co/Comfy-Org/MiniMax-H3/tree/main/diffusion_models\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">More versions</a>\\n</span>&nbsp;<span class=\\\"pix-note-btnblock\\\"><a class=\\\"pix-note-rm\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/LICENSE\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">READ LICENSE</a></span>&nbsp;<span class=\\\"pix-note-btnblock\\\"><a class=\\\"pix-note-rm\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/QA-about-License.md\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">More About LICENSE</a></span>&nbsp;</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><h2><span data-ic=\\\"CLIP\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Load CLIP</h2><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n<span class=\\\"pix-note-btnblock\\\">\\n  <a class=\\\"pix-note-dl\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Download qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors<span class=\\\"pix-note-btnsize\\\">14.6 GB</span></a>\\n</span>&nbsp;\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><div class=\\\"pix-note-folderhint\\\" style=\\\"color: #f66744\\\">Place in: ComfyUI/models/text_encoders</div><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><h2><span data-ic=\\\"VAE\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Load VAE</h2><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n<span class=\\\"pix-note-btnblock\\\">\\n  <a class=\\\"pix-note-dl\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_fp16.safetensors\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Download minimax_h3_video_vae_fp16.safetensors<span class=\\\"pix-note-btnsize\\\">4.9 GB</span></a>\\n</span>&nbsp;\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n<span class=\\\"pix-note-btnblock\\\">\\n  <a class=\\\"pix-note-dl\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_audio_vae_fp32.safetensors\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Download minimax_h3_audio_vae_fp32.safetensors<span class=\\\"pix-note-btnsize\\\">577 MB</span></a>\\n</span>&nbsp;\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><div class=\\\"pix-note-folderhint\\\" style=\\\"color: #f66744\\\">Place in: ComfyUI/models/vae<br></div><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #ffffff\\\"><h3>Custom Chat GPT</h3><p><span class=\\\"pix-note-btnblock\\\"><a class=\\\"pix-note-rm\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://chatgpt.com/g/g-6a71f08838cc8191994ae82634d5c4e4-h3-reference-model-prompts\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Custom ChatGPT for H3 for Reference Model Prompting (Beta)</a></span>&nbsp;</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p><span data-ic=\\\"warning-v1\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;After placing the files, restart ComfyUI or refresh model lists using the <b>R</b> shortcut.</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><h2><span data-ic=\\\"nodes-installed\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Nodes Installed from Manager</h2><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><ul>\\n  <li>Pixaroma</li>\\n</ul><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><h2><span data-ic=\\\"pixaroma\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Resources</h2><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n  <a class=\\\"pix-note-discord\\\" href=\\\"https://discord.com/invite/gggpkVgBf3\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Join Discord</a>&nbsp;\\n  <a class=\\\"pix-note-yt\\\" href=\\\"https://www.youtube.com/@pixaroma\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Pixaroma YouTube Channel</a>&nbsp;\\n</p>\",\"buttonColor\":\"#f66744\",\"lineColor\":\"#f66744\",\"width\":550.5611758382192,\"height\":768.8772678618772,\"backgroundColor\":\"#2a2a2a\"}"
+    },
+    "class_type": "PixaromaNote",
+    "_meta": {
+      "title": "Note Pixaroma"
+    }
+  },
+  "213": {
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "223": {
+    "inputs": {
+      "SizesState": "{\"version\":1,\"sizes\":[[608,352],[736,416],[864,480],[960,544],[1056,608],[1152,640],[1216,672],[1280,736],[1344,768],[1376,768],[1504,832],[1664,928],[1824,1024],[1920,1088]],\"selected\":11,\"orientation\":\"portrait\",\"snap\":32,\"accent\":null,\"collapsed\":false,\"starred\":[\"480x864\",\"672x1216\",\"768x1344\"],\"w\":928,\"h\":1664}"
+    },
+    "class_type": "PixaromaSizes",
+    "_meta": {
+      "title": "1. Pick Orientation and Size"
+    }
+  },
+  "224": {
+    "inputs": {
+      "conditioning": [
+        "237",
+        0
+      ]
+    },
+    "class_type": "ConditioningZeroOut",
+    "_meta": {
+      "title": "Conditioning Zero Out"
+    }
+  },
+  "225": {
+    "inputs": {
+      "seed": 260907776088479,
+      "steps": 30,
+      "cfg": 0.6,
+      "sampler_name": "res_multistep",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "194",
+        0
+      ],
+      "positive": [
+        "237",
+        0
+      ],
+      "negative": [
+        "224",
+        0
+      ],
+      "latent_image": [
+        "237",
+        1
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "226": {
+    "inputs": {
+      "samples": [
+        "225",
+        0
+      ],
+      "vae": [
+        "196",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "227": {
+    "inputs": {
+      "samples": [
+        "225",
+        0
+      ],
+      "vae": [
+        "213",
+        0
+      ]
+    },
+    "class_type": "VAEDecodeAudio",
+    "_meta": {
+      "title": "VAE Decode Audio"
+    }
+  },
+  "228": {
+    "inputs": {
+      "fps": 24,
+      "filename_prefix": "Video",
+      "save_mode": "save",
+      "trim_to_audio": false,
+      "video_frames": [
+        "226",
+        0
+      ],
+      "audio": [
+        "227",
+        0
+      ]
+    },
+    "class_type": "PixaromaSaveMp4",
+    "_meta": {
+      "title": "Save Mp4 Pixaroma"
+    }
+  },
+  "234": {
+    "inputs": {
+      "DurationState": "{\"seconds\":5,\"fps\":24,\"step\":17,\"plus\":5,\"minFrames\":5,\"mode\":\"recipe\",\"formula\":\"\"}"
+    },
+    "class_type": "PixaromaDuration",
+    "_meta": {
+      "title": "2. Duration Pixaroma"
+    }
+  },
+  "235": {
+    "inputs": {},
+    "class_type": "PixaromaRunTimer",
+    "_meta": {
+      "title": "Run Timer Pixaroma"
+    }
+  },
+  "236": {
+    "inputs": {
+      "image": "b2649fece1d0e76a92e5b64fabd653e835744275cb08de6975a1168590df8e01.jpg",
+      "LoadImageMiniState": "{\"version\":1,\"mode\":\"off\",\"max_mp\":1,\"longest_side\":1024,\"scale_factor\":1,\"fit_w\":1024,\"fit_h\":1024,\"cover_w\":1024,\"cover_h\":1024,\"ratio_preset\":\"1:1\",\"ratio_w\":1,\"ratio_h\":1,\"ratio_action\":\"crop\",\"pad_color\":\"#808080\",\"pad_top\":0,\"pad_bottom\":0,\"pad_left\":0,\"pad_right\":0,\"crop_anchor\":\"center\",\"crop_scale\":true,\"snap\":0,\"resample\":\"auto\",\"allow_upscale\":true,\"orig_name\":\"b2649fece1d0e76a92e5b64fabd653e835744275cb08de6975a1168590df8e01.jpg\"}"
+    },
+    "class_type": "PixaromaLoadImageMini",
+    "_meta": {
+      "title": "3. Load Image - ref_image_0"
+    }
+  },
+  "237": {
+    "inputs": {
+      "prompt": [
+        "239",
+        0
+      ],
+      "width": [
+        "223",
+        0
+      ],
+      "height": [
+        "223",
+        1
+      ],
+      "length": [
+        "234",
+        0
+      ],
+      "ref_image_size": "match",
+      "clip": [
+        "195",
+        0
+      ],
+      "vae": [
+        "196",
+        0
+      ],
+      "audio_vae": [
+        "213",
+        0
+      ],
+      "ref_images.ref_image_0": [
+        "236",
+        0
+      ],
+      "ref_images.ref_image_1": [
+        "238",
+        0
+      ],
+      "ref_images.ref_image_2": [
+        "240",
+        0
+      ],
+      "ref_images.ref_image_3": [
+        "241",
+        0
+      ],
+      "ref_images.ref_image_4": [
+        "242",
+        0
+      ]
+    },
+    "class_type": "MiniMaxH3ReferenceToVideo",
+    "_meta": {
+      "title": "MiniMax H3 Reference to Video"
+    }
+  },
+  "238": {
+    "inputs": {
+      "image": "b0e5399a6235ed85b682fd7f1e098da4fef77d74e2f112873d88de82455f2cd0.png",
+      "LoadImageMiniState": "{\"version\":1,\"mode\":\"off\",\"max_mp\":1,\"longest_side\":1024,\"scale_factor\":1,\"fit_w\":1024,\"fit_h\":1024,\"cover_w\":1024,\"cover_h\":1024,\"ratio_preset\":\"1:1\",\"ratio_w\":1,\"ratio_h\":1,\"ratio_action\":\"crop\",\"pad_color\":\"#808080\",\"pad_top\":0,\"pad_bottom\":0,\"pad_left\":0,\"pad_right\":0,\"crop_anchor\":\"center\",\"crop_scale\":true,\"snap\":0,\"resample\":\"auto\",\"allow_upscale\":true,\"orig_name\":\"b0e5399a6235ed85b682fd7f1e098da4fef77d74e2f112873d88de82455f2cd0.png\"}"
+    },
+    "class_type": "PixaromaLoadImageMini",
+    "_meta": {
+      "title": "4. Load Image - ref_image_1"
+    }
+  },
+  "239": {
+    "inputs": {
+      "PromptState": "{\"text\":\"subject_definitions:\\n<Subject 1> = [character: face, hair, defining features — must stay consistent]\\n<Subject 2> = [outfit: garment transferred onto Subject 1, fitted to frame]\\n<Subject 3> = [product: exact color, material, label/logo, shape — hero item, fully preserved]\\n\\nsummary:\\n5-second [landscape/portrait] ad clip. Subject 1 wearing Subject 2 presents/uses Subject 3 in a [setting]. Opens on [hook], resolves on [product beauty shot].\\n\\nretention_analysis:\\nSubject 1: fully_preserved — recognizable character\\nSubject 2: attribute_transfer — outfit fitted onto character\\nSubject 3: fully_preserved — product identity exact (logo, color, label unchanged)\\n\\ndetailed_description:\\n[Shot 1] — hook (0–1s) → demonstration (1–4s) → hero product beauty beat (4–5s)\\n\\noverall_soundscape: [ambience matching setting]\\nnon_diegetic_music: [brand-tone cue, lands on the product reveal]\",\"order\":\"mine\",\"sep\":\", \"}"
+    },
+    "class_type": "PixaromaPrompt",
+    "_meta": {
+      "title": "6. Prompt Pixaroma"
+    }
+  },
+  "240": {
+    "inputs": {
+      "image": "68d034ad6f754908c085c2adaf540f2e09a6de53e09ab08a043104fd6230172e.png",
+      "LoadImageMiniState": "{\"version\":1,\"mode\":\"off\",\"max_mp\":1,\"longest_side\":1024,\"scale_factor\":1,\"fit_w\":1024,\"fit_h\":1024,\"cover_w\":1024,\"cover_h\":1024,\"ratio_preset\":\"1:1\",\"ratio_w\":1,\"ratio_h\":1,\"ratio_action\":\"crop\",\"pad_color\":\"#808080\",\"pad_top\":0,\"pad_bottom\":0,\"pad_left\":0,\"pad_right\":0,\"crop_anchor\":\"center\",\"crop_scale\":true,\"snap\":0,\"resample\":\"auto\",\"allow_upscale\":true,\"orig_name\":\"68d034ad6f754908c085c2adaf540f2e09a6de53e09ab08a043104fd6230172e.png\"}"
+    },
+    "class_type": "PixaromaLoadImageMini",
+    "_meta": {
+      "title": "5. Load Image - ref_image_2"
+    }
+  },
+  "241": {
+    "inputs": {
+      "image": "None",
+      "LoadImageMiniState": "{\"version\":1,\"mode\":\"off\",\"max_mp\":1,\"longest_side\":1024,\"scale_factor\":1,\"fit_w\":1024,\"fit_h\":1024,\"cover_w\":1024,\"cover_h\":1024,\"ratio_preset\":\"1:1\",\"ratio_w\":1,\"ratio_h\":1,\"ratio_action\":\"crop\",\"pad_color\":\"#808080\",\"pad_top\":0,\"pad_bottom\":0,\"pad_left\":0,\"pad_right\":0,\"crop_anchor\":\"center\",\"crop_scale\":true,\"snap\":0,\"resample\":\"auto\",\"allow_upscale\":true,\"orig_name\":\"None\"}"
+    },
+    "class_type": "PixaromaLoadImageMini",
+    "_meta": {
+      "title": "4. Load Image - ref_image_1"
+    }
+  },
+  "242": {
+    "inputs": {
+      "image": "ad6c969d1cf09c3dad4feb87575d05d375734b999117b28fcf5af9aac6ec63c6.jpg",
+      "LoadImageMiniState": "{\"version\":1,\"mode\":\"off\",\"max_mp\":1,\"longest_side\":1024,\"scale_factor\":1,\"fit_w\":1024,\"fit_h\":1024,\"cover_w\":1024,\"cover_h\":1024,\"ratio_preset\":\"1:1\",\"ratio_w\":1,\"ratio_h\":1,\"ratio_action\":\"crop\",\"pad_color\":\"#808080\",\"pad_top\":0,\"pad_bottom\":0,\"pad_left\":0,\"pad_right\":0,\"crop_anchor\":\"center\",\"crop_scale\":true,\"snap\":0,\"resample\":\"auto\",\"allow_upscale\":true,\"orig_name\":\"ad6c969d1cf09c3dad4feb87575d05d375734b999117b28fcf5af9aac6ec63c6.jpg\"}"
+    },
+    "class_type": "PixaromaLoadImageMini",
+    "_meta": {
+      "title": "4. Load Image - ref_image_1"
+    }
+  }
+}

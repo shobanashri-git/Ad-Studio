@@ -1,0 +1,208 @@
+{
+  "194": {
+    "inputs": {
+      "unet_name": "minimax_h3_fl2va_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Load Diffusion Model"
+    }
+  },
+  "195": {
+    "inputs": {
+      "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "type": "minimax",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "Load CLIP"
+    }
+  },
+  "196": {
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "198": {
+    "inputs": {
+      "label_json": "{\"text\":\"Minimax H3 - text to image\",\"fontSize\":31,\"fontFamily\":\"Arial\",\"fontColor\":\"#ffffff\",\"textAlign\":\"left\",\"backgroundColor\":\"#f66744\",\"padding\":10,\"borderRadius\":0,\"opacity\":1,\"fontWeight\":\"normal\",\"lineHeight\":1}"
+    },
+    "class_type": "PixaromaLabel",
+    "_meta": {
+      "title": "Label Pixaroma"
+    }
+  },
+  "212": {
+    "inputs": {
+      "note_json": "{\"version\":1,\"content\":\"<h1>MODELS AND NODES USED IN THIS WORKFLOW</h1><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><h2><span data-ic=\\\"model-v1\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Load Diffusion Model</h2><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n<span class=\\\"pix-note-btnblock\\\">\\n  <a class=\\\"pix-note-dl\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/diffusion_models/minimax_h3_fl2va_pruned_int8_convrot.safetensors\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Download minimax_h3_fl2va_pruned_int8_convrot.safetensors<span class=\\\"pix-note-btnsize\\\">19.5 GB</span></a>\\n</span>&nbsp;\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><div class=\\\"pix-note-folderhint\\\" style=\\\"color: #f66744\\\">Place in: ComfyUI/models/diffusion_models/h3</div><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>Create the <code>h3</code> folder if it does not exist.</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n<span class=\\\"pix-note-btnblock\\\">\\n  <a class=\\\"pix-note-rm\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://huggingface.co/Comfy-Org/MiniMax-H3/tree/main/diffusion_models\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">More versions</a>\\n</span>&nbsp;<span class=\\\"pix-note-btnblock\\\"><a class=\\\"pix-note-rm\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/LICENSE\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">READ LICENSE</a></span>&nbsp;<span class=\\\"pix-note-btnblock\\\"><a class=\\\"pix-note-rm\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/QA-about-License.md\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">More About LICENSE</a></span>&nbsp;</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><h2><span data-ic=\\\"CLIP\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Load Text Encoder</h2><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n<span class=\\\"pix-note-btnblock\\\">\\n  <a class=\\\"pix-note-dl\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Download qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors<span class=\\\"pix-note-btnsize\\\">14.6 GB</span></a>\\n</span>&nbsp;\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><div class=\\\"pix-note-folderhint\\\" style=\\\"color: #f66744\\\">Place in: ComfyUI/models/text_encoders</div><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><h2><span data-ic=\\\"VAE\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Load VAE</h2><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n<span class=\\\"pix-note-btnblock\\\">\\n  <a class=\\\"pix-note-dl\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_fp16.safetensors\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Download minimax_h3_video_vae_fp16.safetensors<span class=\\\"pix-note-btnsize\\\">4.9 GB</span></a>\\n</span>&nbsp;\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><div class=\\\"pix-note-folderhint\\\" style=\\\"color: #f66744\\\">Place in: ComfyUI/models/vae<br></div><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #ffffff\\\"><h3>Custom Chat GPT</h3><p><span class=\\\"pix-note-btnblock\\\"><a class=\\\"pix-note-rm\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://chatgpt.com/g/g-6a70726c663c81919ff3199d41c73f0e-minimax-h3-prompts\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Custom ChatGPT for H3 Prompting (Beta)</a></span>&nbsp;</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p><span data-ic=\\\"warning-v1\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;After placing the files, restart ComfyUI or refresh model lists using the <b>R</b> shortcut.</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><h2><span data-ic=\\\"nodes-installed\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Nodes Installed from Manager</h2><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><ul>\\n  <li>Pixaroma</li>\\n</ul><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><h2><span data-ic=\\\"pixaroma\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Resources</h2><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n  <a class=\\\"pix-note-discord\\\" href=\\\"https://discord.com/invite/gggpkVgBf3\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Join Discord</a>&nbsp;\\n  <a class=\\\"pix-note-yt\\\" href=\\\"https://www.youtube.com/@pixaroma\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Pixaroma YouTube Channel</a>&nbsp;\\n</p>\",\"buttonColor\":\"#f66744\",\"lineColor\":\"#f66744\",\"width\":550.5611758382192,\"height\":768.8772678618772,\"backgroundColor\":\"#2a2a2a\"}"
+    },
+    "class_type": "PixaromaNote",
+    "_meta": {
+      "title": "Note Pixaroma"
+    }
+  },
+  "222": {
+    "inputs": {
+      "prompt": [
+        "244",
+        0
+      ],
+      "width": [
+        "241",
+        0
+      ],
+      "height": [
+        "241",
+        1
+      ],
+      "length": 5,
+      "clip": [
+        "195",
+        0
+      ],
+      "vae": [
+        "196",
+        0
+      ],
+      "last_frame": [
+        "247",
+        0
+      ]
+    },
+    "class_type": "MiniMaxH3ImageToVideo",
+    "_meta": {
+      "title": "MiniMax H3 Image to Video"
+    }
+  },
+  "224": {
+    "inputs": {
+      "conditioning": [
+        "222",
+        0
+      ]
+    },
+    "class_type": "ConditioningZeroOut",
+    "_meta": {
+      "title": "Conditioning Zero Out"
+    }
+  },
+  "225": {
+    "inputs": {
+      "seed": 880538193479464,
+      "steps": 20,
+      "cfg": 1,
+      "sampler_name": "res_multistep",
+      "scheduler": "beta",
+      "denoise": 1,
+      "model": [
+        "194",
+        0
+      ],
+      "positive": [
+        "222",
+        0
+      ],
+      "negative": [
+        "224",
+        0
+      ],
+      "latent_image": [
+        "222",
+        1
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "226": {
+    "inputs": {
+      "samples": [
+        "225",
+        0
+      ],
+      "vae": [
+        "196",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "235": {
+    "inputs": {},
+    "class_type": "PixaromaRunTimer",
+    "_meta": {
+      "title": "Run Timer Pixaroma"
+    }
+  },
+  "236": {
+    "inputs": {
+      "batch_index": 0,
+      "length": 1,
+      "image": [
+        "226",
+        0
+      ]
+    },
+    "class_type": "ImageFromBatch",
+    "_meta": {
+      "title": "Get Image from Batch"
+    }
+  },
+  "237": {
+    "inputs": {
+      "filename_prefix": "img",
+      "save_mode": "save",
+      "pixaroma_buttons": null,
+      "pixaroma_strip": null,
+      "image": [
+        "236",
+        0
+      ],
+      "CivitaiMeta": "0"
+    },
+    "class_type": "PixaromaPreview",
+    "_meta": {
+      "title": "Preview Image Pixaroma"
+    }
+  },
+  "241": {
+    "inputs": {
+      "width": 1080,
+      "height": 1920,
+      "PortraitLandscapeState": "{\"orient\":\"portrait\",\"multiple\":32}"
+    },
+    "class_type": "PixaromaPortraitLandscape",
+    "_meta": {
+      "title": "1. Portrait or Landscape?"
+    }
+  },
+  "244": {
+    "inputs": {
+      "PromptState": "{\"text\":\"A radiant young Indian woman with warm brown skin and expressive dark eyes, wearing an elegant emerald-green silk saree with gold zari borders. Delicate gold jhumka earrings and a subtle maang tikka frame her face. Soft natural sunlight, shallow depth of field, warm golden-hour tones. She has a gentle, confident smile, long dark hair styled in a loose braid with jasmine flowers. Shot on 85mm lens, professional portrait photography, cinematic lighting, ultra-detailed, photorealistic, 4k.\",\"order\":\"mine\",\"sep\":\", \"}"
+    },
+    "class_type": "PixaromaPrompt",
+    "_meta": {
+      "title": "2. Add your prompt"
+    }
+  },
+  "247": {
+    "inputs": {
+      "image": "f5b0b5eaf6d8b465c0d6cfad86e945ac86351b22c90acc0266d5256581fd956b.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  }
+}

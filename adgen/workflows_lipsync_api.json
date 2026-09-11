@@ -1,0 +1,268 @@
+{
+  "194": {
+    "inputs": {
+      "unet_name": "minimax_h3_ref2va_viggle_pruned_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Load Diffusion Model"
+    }
+  },
+  "195": {
+    "inputs": {
+      "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "type": "minimax",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "Load CLIP"
+    }
+  },
+  "196": {
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "198": {
+    "inputs": {
+      "label_json": "{\"text\":\"Minimax H3 - Reference Image + Audio Sync - SPEAK\",\"fontSize\":31,\"fontFamily\":\"Arial\",\"fontColor\":\"#ffffff\",\"textAlign\":\"left\",\"backgroundColor\":\"#f66744\",\"padding\":10,\"borderRadius\":0,\"opacity\":1,\"fontWeight\":\"normal\",\"lineHeight\":1}"
+    },
+    "class_type": "PixaromaLabel",
+    "_meta": {
+      "title": "Label Pixaroma"
+    }
+  },
+  "212": {
+    "inputs": {
+      "note_json": "{\"version\":1,\"content\":\"<h1>MODELS AND NODES USED IN THIS WORKFLOW</h1><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><h2><span data-ic=\\\"model-v1\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Load Diffusion Model</h2><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n<span class=\\\"pix-note-btnblock\\\"><a class=\\\"pix-note-dl\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/diffusion_models/minimax_h3_ref2va_pruned_int8_convrot.safetensors\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Download minimax_h3_ref2va_pruned_int8_convrot.safetensors<span class=\\\"pix-note-btnsize\\\">19.5 GB</span></a></span>&nbsp;\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><div class=\\\"pix-note-folderhint\\\" style=\\\"color: #f66744\\\">Place in: ComfyUI/models/diffusion_models/h3</div><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>Create the <code>h3</code> folder if it does not exist.</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n<span class=\\\"pix-note-btnblock\\\">\\n  <a class=\\\"pix-note-rm\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://huggingface.co/Comfy-Org/MiniMax-H3/tree/main/diffusion_models\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">More versions</a>\\n</span>&nbsp;<span class=\\\"pix-note-btnblock\\\"><a class=\\\"pix-note-rm\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/LICENSE\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">READ LICENSE</a></span>&nbsp;<span class=\\\"pix-note-btnblock\\\"><a class=\\\"pix-note-rm\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/QA-about-License.md\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">More About LICENSE</a></span>&nbsp;</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><h2><span data-ic=\\\"CLIP\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Load CLIP</h2><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n<span class=\\\"pix-note-btnblock\\\">\\n  <a class=\\\"pix-note-dl\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Download qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors<span class=\\\"pix-note-btnsize\\\">14.6 GB</span></a>\\n</span>&nbsp;\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><div class=\\\"pix-note-folderhint\\\" style=\\\"color: #f66744\\\">Place in: ComfyUI/models/text_encoders</div><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><h2><span data-ic=\\\"VAE\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Load VAE</h2><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n<span class=\\\"pix-note-btnblock\\\">\\n  <a class=\\\"pix-note-dl\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_fp16.safetensors\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Download minimax_h3_video_vae_fp16.safetensors<span class=\\\"pix-note-btnsize\\\">4.9 GB</span></a>\\n</span>&nbsp;\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n<span class=\\\"pix-note-btnblock\\\">\\n  <a class=\\\"pix-note-dl\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_audio_vae_fp32.safetensors\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Download minimax_h3_audio_vae_fp32.safetensors<span class=\\\"pix-note-btnsize\\\">577 MB</span></a>\\n</span>&nbsp;\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><div class=\\\"pix-note-folderhint\\\" style=\\\"color: #f66744\\\">Place in: ComfyUI/models/vae<br></div><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #ffffff\\\"><h3>Custom Chat GPT</h3><p><span class=\\\"pix-note-btnblock\\\"><a class=\\\"pix-note-rm\\\" style=\\\"background-color: #f66744\\\" href=\\\"https://chatgpt.com/g/g-6a71f08838cc8191994ae82634d5c4e4-h3-reference-model-prompts\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Custom ChatGPT for H3 for Reference Model Prompting (Beta)</a></span>&nbsp;</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p><span data-ic=\\\"warning-v1\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;After placing the files, restart ComfyUI or refresh model lists using the <b>R</b> shortcut.</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><h2><span data-ic=\\\"nodes-installed\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Nodes Installed from Manager</h2><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><ul>\\n  <li>Pixaroma</li>\\n</ul><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><hr class=\\\"pix-note-hr-solid\\\" style=\\\"color: #b8b8b8\\\"><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><h2><span data-ic=\\\"pixaroma\\\" class=\\\"pix-note-ic\\\" contenteditable=\\\"false\\\" style=\\\"color: #f66744\\\"></span>&nbsp;Resources</h2><p>\\n\\n</p><p>\\n\\n</p><p>\\n\\n</p><p>\\n  <a class=\\\"pix-note-discord\\\" href=\\\"https://discord.com/invite/gggpkVgBf3\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Join Discord</a>&nbsp;\\n  <a class=\\\"pix-note-yt\\\" href=\\\"https://www.youtube.com/@pixaroma\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Pixaroma YouTube Channel</a>&nbsp;\\n</p>\",\"buttonColor\":\"#f66744\",\"lineColor\":\"#f66744\",\"width\":550.5611758382192,\"height\":768.8772678618772,\"backgroundColor\":\"#2a2a2a\"}"
+    },
+    "class_type": "PixaromaNote",
+    "_meta": {
+      "title": "Note Pixaroma"
+    }
+  },
+  "213": {
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "224": {
+    "inputs": {
+      "conditioning": [
+        "237",
+        0
+      ]
+    },
+    "class_type": "ConditioningZeroOut",
+    "_meta": {
+      "title": "Conditioning Zero Out"
+    }
+  },
+  "225": {
+    "inputs": {
+      "seed": 1018455611314072,
+      "steps": 20,
+      "cfg": 1,
+      "sampler_name": "res_multistep",
+      "scheduler": "beta",
+      "denoise": 1,
+      "model": [
+        "248",
+        0
+      ],
+      "positive": [
+        "237",
+        0
+      ],
+      "negative": [
+        "224",
+        0
+      ],
+      "latent_image": [
+        "248",
+        1
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "226": {
+    "inputs": {
+      "samples": [
+        "225",
+        0
+      ],
+      "vae": [
+        "196",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "228": {
+    "inputs": {
+      "fps": 24,
+      "filename_prefix": "Video",
+      "save_mode": "save",
+      "trim_to_audio": false,
+      "video_frames": [
+        "226",
+        0
+      ],
+      "audio": [
+        "248",
+        2
+      ]
+    },
+    "class_type": "PixaromaSaveMp4",
+    "_meta": {
+      "title": "Save Mp4 Pixaroma"
+    }
+  },
+  "234": {
+    "inputs": {
+      "DurationState": "{\"seconds\":4,\"fps\":24,\"step\":17,\"plus\":5,\"minFrames\":5,\"mode\":\"recipe\",\"formula\":\"\"}"
+    },
+    "class_type": "PixaromaDuration",
+    "_meta": {
+      "title": "1. Set Duration"
+    }
+  },
+  "235": {
+    "inputs": {},
+    "class_type": "PixaromaRunTimer",
+    "_meta": {
+      "title": "Run Timer Pixaroma"
+    }
+  },
+  "236": {
+    "inputs": {
+      "image": "b0152443d26ef4fd6e4472452e7c46f4250dfb2b3096ad55000020cf901d8f87.png",
+      "LoadImageMiniState": "{\"version\":1,\"mode\":\"off\",\"max_mp\":1,\"longest_side\":1024,\"scale_factor\":1,\"fit_w\":1024,\"fit_h\":1024,\"cover_w\":1024,\"cover_h\":1024,\"ratio_preset\":\"1:1\",\"ratio_w\":1,\"ratio_h\":1,\"ratio_action\":\"crop\",\"pad_color\":\"#808080\",\"pad_top\":0,\"pad_bottom\":0,\"pad_left\":0,\"pad_right\":0,\"crop_anchor\":\"center\",\"crop_scale\":true,\"snap\":0,\"resample\":\"auto\",\"allow_upscale\":true,\"orig_name\":\"b0152443d26ef4fd6e4472452e7c46f4250dfb2b3096ad55000020cf901d8f87.png\"}"
+    },
+    "class_type": "PixaromaLoadImageMini",
+    "_meta": {
+      "title": "3. Load Image"
+    }
+  },
+  "237": {
+    "inputs": {
+      "prompt": [
+        "239",
+        0
+      ],
+      "width": [
+        "243",
+        1
+      ],
+      "height": [
+        "243",
+        2
+      ],
+      "length": [
+        "234",
+        0
+      ],
+      "ref_image_size": "match",
+      "clip": [
+        "195",
+        0
+      ],
+      "vae": [
+        "196",
+        0
+      ],
+      "audio_vae": [
+        "213",
+        0
+      ],
+      "ref_images.ref_image_0": [
+        "243",
+        0
+      ],
+      "ref_audios.ref_audio_0": [
+        "247",
+        0
+      ]
+    },
+    "class_type": "MiniMaxH3ReferenceToVideo",
+    "_meta": {
+      "title": "MiniMax H3 Reference to Video"
+    }
+  },
+  "239": {
+    "inputs": {
+      "PromptState": "{\"text\":\"<Subject 1> is the young woman from the reference image, preserving her long wavy black hair, warm brown eyes, small bindi, gold hoop earrings, softly defined brows, natural warm complexion, and calm expressive face. She wears a simple white top.\\n\\n<Subject 2> is the warm sunlit garden setting from the reference image background, preserving the soft-focus greenery, blush-pink flowering shrubs, pale golden stone architecture, and gentle daytime light.\\n\\nsummary:\\n\\n[reference generation] A 5-second landscape talking clip. <Subject 1> faces the camera in a soft-focus garden and delivers a single spoken line to the lens, gesturing lightly as if directing the viewer's attention to something nearby, lip-synced to the provided audio.\\n\\nretention_analysis:\\n\\n<Subject 1> (appears in [Shot 1]): fully_preserved — her face, hair, bindi, hoop earrings, and calm warmth remain clearly recognizable throughout.\\n<Subject 2> (appears in [Shot 1]): fully_preserved — the blurred garden greenery, pink blooms, and warm stone backdrop stay soft behind her.\\n\\ndetailed_description:\\n\\n[Shot 1] A flattering medium close-up frames <Subject 1> centered against the soft-focus sunlit garden, her hair loose over one shoulder with a light breeze lifting a few strands. She looks directly into the lens, then her expression shifts to warm, engaged interest as she gently turns her head and glances slightly off to one side, as though noticing something worth pointing out. Her mouth begins closed and still, then she speaks naturally and clearly, her lips, jaw, and micro-expressions synced precisely to the audio: <d>[English] Look here, this small child is taking water for workers.</d> On \\\"look here,\\\" she gives a small, natural tilt of the head and a subtle guiding glance to draw the viewer's eye; through the rest of the line her brows lift softly with warmth and mild wonder, eyes staying bright and connected. Small natural blinks and gentle head movement keep it lifelike. The background stays gently blurred so attention holds on her face and expression. The camera is locked and steady with a barely perceptible slow push-in across the five seconds. The clip ends as she finishes the line and returns her gaze fully to the lens, settling into a soft, warm closed-mouth smile.\\n\\noverall_soundscape:\\n\\nQuiet outdoor garden ambience — faint birdsong, a soft breeze through leaves — kept low so the spoken line stays clear and forward.\\n\\nnon_diegetic_music:\\n\\nOptional light underscore — a single sustained warm pad or a few soft piano notes, very quiet, supporting the mood without competing with the voice. Omit entirely if the line should stand alone.\",\"order\":\"mine\",\"sep\":\", \"}"
+    },
+    "class_type": "PixaromaPrompt",
+    "_meta": {
+      "title": "4. The Prompt"
+    }
+  },
+  "243": {
+    "inputs": {
+      "image": [
+        "236",
+        0
+      ],
+      "LongestSideState": "{\"size\":864,\"ratio\":\"keep\",\"step\":32,\"anchor\":\"center\",\"allow_upscale\":true,\"resample\":\"auto\"}"
+    },
+    "class_type": "PixaromaLongestSide",
+    "_meta": {
+      "title": "5. Longest Side (Select the max size you want)"
+    }
+  },
+  "247": {
+    "inputs": {
+      "seconds": [
+        "234",
+        1
+      ],
+      "LoadAudioState": "{\"file\":\"71634f90a227d7ef29edb1e2ba6e8c631b846f58bba1f6a01a883952c9406fe8.mp3\",\"start\":0,\"length\":5,\"whenUnwired\":\"whole\",\"whenShort\":\"silence\"}"
+    },
+    "class_type": "PixaromaLoadAudio",
+    "_meta": {
+      "title": "2. Upload Audio and adjust duration"
+    }
+  },
+  "248": {
+    "inputs": {
+      "model": [
+        "194",
+        0
+      ],
+      "latent": [
+        "237",
+        1
+      ],
+      "audio_vae": [
+        "213",
+        0
+      ],
+      "track": [
+        "247",
+        0
+      ],
+      "H3SyncState": "{\"limit\":15,\"overMode\":\"warn\",\"whenShort\":\"silence\"}"
+    },
+    "class_type": "PixaromaH3AudioSync",
+    "_meta": {
+      "title": "H3 Audio Sync Pixaroma"
+    }
+  }
+}
