@@ -10,23 +10,23 @@ Ad Studio wraps four [RunningHub](https://www.runninghub.ai) ComfyUI workflows b
 
 **The app — one interface for image, character, video, and lip-sync generation:**
 
-![Ad Studio UI](Docs/app-ui.png)
+![Ad Studio UI](docs/app-ui.png)
 
 **From one reference photo to an ad-ready shot — same character, art-directed scene:**
 
-![Ad-ready output](Docs/ad-shot.png)
+![Ad-ready output](docs/ad-shot.png)
 
 **The same face held consistent across completely different scenes:**
 
-![Scene outputs](Docs/scenes.png)
+![Scene outputs](docs/scenes.png)
 
 **A full turnaround set from a single reference:**
 
-![Character turnaround](Docs/turnaround.png)
+![Character turnaround](docs/turnaround.png)
 
 **Identity preserved down to the closeup:**
 
-![Character closeup](Docs/closeup.png)
+![Character closeup](docs/closeup.png)
 
 ---
 
