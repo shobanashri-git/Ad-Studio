@@ -1,59 +1,108 @@
-# Ad Studio — modular pipeline over RunningHub
+# Ad Studio
 
-Four independent workflows wrapped as a FastAPI backend + single-page React UI.
-Run any panel in any order; outputs flow between panels through a shared asset tray.
+**An AI ad-asset pipeline with a single, modular interface — generate a character, put them in a scene, and give them a voice, all from one app.**
 
-Workflows: **image gen · character consistency · multi-image→video · image+audio lip-sync**
-(all MiniMax H3 / Pixaroma graphs on RunningHub).
+Ad Studio wraps four [RunningHub](https://www.runninghub.ai) ComfyUI workflows behind one clean interface. Instead of jumping between separate ComfyUI graphs, you drive image generation, character consistency, image-to-video, and lip-sync from a single OpenArt-style app — and pass results between them freely.
 
-## Layout
+---
+
+## Demo
+
+**The app — one interface for image, character, video, and lip-sync generation:**
+
+![Ad Studio UI](Docs/app-ui.png)
+
+**From one reference photo to an ad-ready shot — same character, art-directed scene:**
+
+![Ad-ready output](Docs/ad-shot.png)
+
+**The same face held consistent across completely different scenes:**
+
+![Scene outputs](Docs/scenes.png)
+
+**A full turnaround set from a single reference:**
+
+![Character turnaround](Docs/turnaround.png)
+
+**Identity preserved down to the closeup:**
+
+![Character closeup](Docs/closeup.png)
+
+---
+
+## What it does
+
+Four generation tools, each its own panel, runnable in any order:
+
+- **Image** — text-to-image from a prompt, with an optional reference image to guide the result. Portrait/landscape sizing and sampler controls (seed, steps, CFG) exposed.
+- **Character** — build a consistent character set from one reference photo, a prompt, a name, and style + pose references. Same identity across turnarounds, closeups, poses, and in-scene shots.
+- **Video** — place a character in a scene with up to five reference images (character, outfit, product, background, second character), pick a size and duration (3–15s).
+- **Lip-sync** — sync a face to an uploaded audio track for a talking or singing closeup.
+
+Every result lands in a **gallery**. Images render at full aspect ratio, are clickable to open full-size, and each can be **saved individually** (or all at once) to a folder of your choice — with a metadata manifest (prompt, tool, date) written alongside. Any output can also be fed straight into the next tool's inputs, so the character you generate becomes the character in your video, which becomes the face in your lip-sync.
+
+---
+
+## How it's built
+
 ```
-adgen/
-  runninghub.py    thin RunningHub client (upload/create/status/outputs/wait)
-  config.py        per-workflow patch descriptors + node map + option lists
-  patcher.py       loads exported workflow JSON, patches values, emits nodeInfoList
-  orchestrator.py  the four operations (upload → patch → submit → wait → download)
-  api.py           FastAPI: /image /character /video /lipsync, /jobs/{id}, /files/{name}
-  stitch.py        ffmpeg helpers (unused by these workflows; kept for >15s later)
-  workflows_*.json the exported API JSONs (source of truth for node IDs)
-adgen-ui.jsx       the React UI (set DEMO_MODE=false, API_BASE to the backend)
+React + Vite UI  ──HTTP──▶  FastAPI backend  ──REST──▶  RunningHub (ComfyUI workflows)
+  three-column app          async job queue              image / character / video / lip-sync
+  gallery + save            workflow patcher             graphs run on RunningHub's GPUs
 ```
 
-## Setup
-1. `pip install -r requirements.txt`  (fastapi, uvicorn, httpx, python-multipart)
-2. Set env:
-   ```
-   export RH_API_KEY=...            # Personal+ tier
-   export RH_BASE_URL=https://www.runninghub.ai   # or .cn for mainland
-   export RH_WORKFLOW_IMAGE=...     # RunningHub workflowId for each workflow
-   export RH_WORKFLOW_CHARACTER=...
-   export RH_WORKFLOW_VIDEO=...
-   export RH_WORKFLOW_LIPSYNC=...
-   ```
-3. Two placeholders still to fill:
-   - `config.py` → VIDEO `character2` patch: set the **5th ref-image loader nodeId**
-     once you add it in RunningHub (currently `REPLACE_5TH_LOADER_NODE`).
-   - The four `RH_WORKFLOW_*` ids above (from each workflow's RunningHub page).
-4. Run: `uvicorn adgen.api:app --reload`
-5. UI: set `DEMO_MODE = false` and `API_BASE` in `adgen-ui.jsx`, drop it into a React app.
+**The interesting engineering problem:** These RunningHub workflows are built on free, publicly available ComfyUI workflow templates. They are customised where certain inputs (prompt, duration, size, audio) aren't plain fields — they're encoded as JSON-string "state blobs" inside the node graph. Driving them via the API meant writing a **patcher** that loads each exported workflow graph, rewrites the right values inside those blobs (or the plain fields), and submits only the changed nodes as overrides — leaving every pinned model, VAE, and sampler setting intact. This keeps the app decoupled from the workflows: swapping in a better workflow later is a config change, not a rewrite.
 
-## How inputs map (the important part)
-These Pixaroma nodes store values inside JSON-string "state" blobs, not plain
-fields. `patcher.py` loads the exported graph and rewrites the right blob key or
-plain field, then sends only the changed nodes as RunningHub node overrides.
-Model/CLIP/VAE/sampler settings ride along from the export unchanged.
+Other design decisions:
+- **Modular, not linear** — the pipeline doesn't force an order. Each tool is independent; the shared gallery is the only link, so you compose freely.
+- **Async job model** — generations run as background jobs the UI polls, so long video renders don't block the interface.
+- **Runtime-aware** — the UI surfaces a coin-cost estimate per generation and shows your live RunningHub balance, because these models bill by GPU time.
 
-- **image**: prompt→node 244 (PromptState.text), width/height→241, seed/steps/cfg→225 (KSampler)
-- **character**: face→LoadImage 626, prompt→String Literal 594, name→471, style+quality→608
-- **video**: refs→loaders 236/238/240/241(+5th), prompt→239, duration→234 (seconds), size→223 (SizesState index)
-- **lipsync**: face→236, audio→247 (LoadAudioState.file), prompt→239, duration→234, longest-side+ratio→243
+---
 
-Duration→frames is computed by the workflow's own duration node (nonlinear,
-~24fps), so the backend only sets `seconds` — no beat-stitching needed.
+## Tech stack
 
-## Notes
-- Job + asset store are in-memory (single user). Move to Redis/DB for production.
-- Outputs are downloaded to a temp dir and served at `/files/...`; push to real
-  storage for production.
-- Tray references: the UI sends `<name>_ref=<asset_id>` for tray picks; the
-  backend resolves them to local paths and re-uploads to RunningHub.
+- **Backend:** Python, FastAPI, async job orchestration, httpx
+- **Frontend:** React, Vite
+- **Generation:** RunningHub API, ComfyUI workflow graphs (MiniMax H3 for image/video/audio-sync; Flux Kontext for character consistency)
+- **Media:** ffmpeg (video assembly helpers)
+
+---
+
+## Run it locally
+
+**Prerequisites:** Python 3.10+, Node 18+, and a RunningHub account (Personal membership for API access).
+
+**1. Backend**
+```bash
+cd "ADgen Pipeline"
+pip install -r requirements.txt
+cp .env.example .env          # then fill in your RunningHub key + workflow IDs
+uvicorn adgen.api:app --reload
+```
+
+**2. Frontend**
+```bash
+cd adgen-frontend
+npm install
+npm run dev
+```
+
+Open the Vite URL (usually `http://localhost:5173`). The backend runs on `http://127.0.0.1:8000`. Configuration lives in `.env` (see `.env.example`): your RunningHub API key, region host, and the four workflow IDs.
+
+---
+
+## Credits
+
+Built on free, publicly available ComfyUI workflow templates, using MiniMax H3 and Flux Kontext models, run on [RunningHub](https://www.runninghub.ai). The workflows are used largely as provided; Ad Studio is the API layer, patcher, orchestration, and interface built around them.
+
+---
+
+## Built by Shobie
+
+Shobanashri Harish (Shobie) — Creative Media Producer working at the intersection of Filmmaking and AI. MA in Creative Media Production, NABA Milan; background in Computer Science and Engineering.
+
+- **Film & creative portfolio:** https://canva.link/qwlprjpfxj6ro3y
+- **LinkedIn:** https://www.linkedin.com/in/shobanashri-harish-47a21a26b/
+
+*Ad Studio is a personal project exploring how AI generation pipelines can be made usable for real creative production work.*
